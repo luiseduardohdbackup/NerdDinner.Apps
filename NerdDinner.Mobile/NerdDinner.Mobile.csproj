@@ -42,6 +42,7 @@
     <Compile Include="Services\INerdDinnerService.cs" />
     <Compile Include="Services\NerdDinnerService.cs" />
     <Compile Include="ViewModels\DetailViewModel.cs" />
+    <Compile Include="ViewModels\Helpers\WithCommand.cs" />
     <Compile Include="ViewModels\ListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

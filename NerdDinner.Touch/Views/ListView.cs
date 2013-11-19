@@ -35,12 +35,14 @@ namespace NerdDinner.Touch
         {
             base.ViewDidLoad();
 
-            var source = new MvxStandardTableViewSource(TableView, "TitleText Title");
+            var source = new MvxStandardTableViewSource(TableView, "TitleText Item.Title");
             this.CreateBinding(source).To<ListViewModel>(vm => vm.Items).Apply();
-            this.CreateBinding(source).For(s => s.SelectionChangedCommand).To<ListViewModel>(vm => vm.ItemSelectedCommand).Apply();
+            this.CreateBinding(source).For(s => s.SelectionChangedCommand).To<DinnerWithCommand>(vm => vm.Command).Apply();
             TableView.Source = source;
             TableView.ReloadData();
         }
     }
 }
+
+
 

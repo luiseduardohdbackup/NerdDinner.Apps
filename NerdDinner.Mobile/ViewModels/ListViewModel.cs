@@ -1,11 +1,21 @@
 using Cirrious.MvvmCross.ViewModels;
 using NerdDinner.Core;
 using NerdDinner.Mobile.Services;
+using NerdDinner.Mobile.ViewModels.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NerdDinner.Mobile.ViewModels
 {
+	public class DinnerWithCommand : WithCommand<Dinner>
+	{
+		public DinnerWithCommand(Dinner item, Action<Dinner> tapAction)
+			: base(item, new MvxCommand(() => tapAction(item)))
+		{
+		}
+	}
+
 	public class ListViewModel 
 		: MvxViewModel
 	{
@@ -25,7 +35,9 @@ namespace NerdDinner.Mobile.ViewModels
 		private void OnDinnerItems(List<Dinner> list)
 		{
 			IsLoading = false;
-			Items = list;
+
+			var newList = list.AsEnumerable().Select(x => new DinnerWithCommand(x, DoSelectItem));
+            Items = new List<DinnerWithCommand>(newList);
 		}
 
 		private void OnError(Exception error)
@@ -41,21 +53,11 @@ namespace NerdDinner.Mobile.ViewModels
 			set { _isLoading = value; RaisePropertyChanged(() => IsLoading); }
 		}
 
-		private List<Dinner> _items;
-		public List<Dinner> Items
+		private List<DinnerWithCommand> _items;
+		public List<DinnerWithCommand> Items
 		{
 			get { return _items; }
 			set { _items = value; RaisePropertyChanged(() => Items); }
-		}
-
-		private Cirrious.MvvmCross.ViewModels.MvxCommand<Dinner> _itemSelectedCommand;
-		public System.Windows.Input.ICommand ItemSelectedCommand
-		{
-			get
-			{
-				_itemSelectedCommand = _itemSelectedCommand ?? new Cirrious.MvvmCross.ViewModels.MvxCommand<Dinner>(DoSelectItem);
-				return _itemSelectedCommand;
-			}
 		}
 
 		private void DoSelectItem(Dinner item)

@@ -15,7 +15,8 @@ namespace NerdDinner.Phone.Views
         {
             if (e.AddedItems.Count == 1)
             {
-                ((ListViewModel)ViewModel).ItemSelectedCommand.Execute(e.AddedItems[0]);
+                var item = e.AddedItems[0] as DinnerWithCommand;
+                item.Command.Execute(item.Item);
                 ((ListBox)sender).SelectedIndex = -1;
             }
         }
