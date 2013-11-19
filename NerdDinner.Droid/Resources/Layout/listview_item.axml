@@ -4,5 +4,5 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:padding="20dp"
-    local:MvxBind="Text Item.Title;Click Command"
+    local:MvxBind="Text Title"
     android:textAppearance="?android:attr/textAppearanceLarge" />

@@ -79,6 +79,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="Views\DetailView.cs" />
     <Compile Include="Views\ListView.cs" />
     <Compile Include="Views\ListView.designer.cs">
       <DependentUpon>ListView.cs</DependentUpon>

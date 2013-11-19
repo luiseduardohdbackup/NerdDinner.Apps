@@ -7,7 +7,7 @@
   <Mvx.MvxListView
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
-		local:MvxBind="ItemsSource Items"
+		local:MvxBind="ItemsSource Items; ItemClick ItemSelectedCommand"
 		local:MvxItemTemplate="@layout/listview_item"
 	  />
 </FrameLayout>
