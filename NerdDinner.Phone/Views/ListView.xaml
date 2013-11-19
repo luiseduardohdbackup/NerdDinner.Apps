@@ -29,7 +29,7 @@
 
 
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" Width="460">
-            <ListBox Name="listBox" ItemsSource="{Binding Items}" >
+            <ListBox Name="listBox" ItemsSource="{Binding Items}" SelectionChanged="Selector_OnSelectionChanged" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">

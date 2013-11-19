@@ -60,7 +60,7 @@ namespace NerdDinner.Mobile.ViewModels
 
 		private void DoSelectItem(Dinner item)
 		{
-			///ShowViewModel<DetailViewModel>(item);
+			ShowViewModel<DetailViewModel>(item);
 		}
 	}
 }
