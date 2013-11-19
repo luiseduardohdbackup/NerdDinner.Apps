@@ -1,6 +1,8 @@
 ﻿using NerdDinner.Core;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Runtime.Serialization.Json;
 
@@ -29,9 +31,16 @@ namespace NerdDinner.Mobile.Services
                 var response = request.EndGetResponse(result);
                 using (var stream = response.GetResponseStream())
                 {
-                    DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(List<Dinner>));
-                    var list = jsonSerializer.ReadObject(stream) as List<Dinner>;
-                    success(list);
+                    using (StreamReader sr = new StreamReader(stream))
+                    {
+                        using (JsonReader reader = new JsonTextReader(sr))
+                        {
+                            JsonSerializer serializer = new JsonSerializer();
+
+                            var list = serializer.Deserialize<List<Dinner>>(reader);
+                            success(list);
+                        }
+                    }
                 }
             }
             catch (Exception exception)

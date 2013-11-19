@@ -96,6 +96,9 @@ namespace NerdDinner.Droid
 			// aapt resource value: 0x7f040004
 			public const int textView3 = 2130968580;
 			
+			// aapt resource value: 0x7f040005
+			public const int textView4 = 2130968581;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

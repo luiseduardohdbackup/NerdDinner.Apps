@@ -39,6 +39,9 @@
                 x:Name="Description" 
                 Text="{Binding Item.Description}" Margin="9,30,0,0" Style="{StaticResource PhoneTextLargeStyle}" Height="49" TextWrapping="Wrap" Width="440" />
                 <TextBlock 
+                x:Name="EventDate" 
+                Text="{Binding Item.EventDate}" Margin="9,30,0,0" Style="{StaticResource PhoneTextLargeStyle}" Height="49" TextWrapping="Wrap" Width="440" />
+                <TextBlock 
                 x:Name="HostedBy" 
                 Text="{Binding Item.HostedBy}" Margin="9,30,0,0" Style="{StaticResource PhoneTextLargeStyle}" Height="49" TextWrapping="Wrap" Width="440" />
             </StackPanel>

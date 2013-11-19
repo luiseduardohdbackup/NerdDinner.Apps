@@ -18,8 +18,13 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/textView2" />
 	<TextView
-		local:MvxBind="Text Item.HostedBy"
+		local:MvxBind="Text Item.EventDate"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView3" />
+	<TextView
+		local:MvxBind="Text Item.HostedBy"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView4" />
 </LinearLayout>

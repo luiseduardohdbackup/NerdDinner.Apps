@@ -37,12 +37,16 @@ namespace NerdDinner.Touch.Views
             var descriptionLabel = new UILabel(new RectangleF(10, 140, 300, 40));
             Add(descriptionLabel);
 
-            var hostedByLabel = new UILabel(new RectangleF(10, 180, 300, 40));
+            var eventDateLable = new UILabel(new RectangleF(10, 180, 300, 40));
+            Add(eventDateLable);
+
+            var hostedByLabel = new UILabel(new RectangleF(10, 220, 300, 40));
             Add(hostedByLabel);
 
             var set = this.CreateBindingSet<DetailView, DetailViewModel>();
             set.Bind(titleLabel).To(vm => vm.Item.Title);
             set.Bind(descriptionLabel).To(vm => vm.Item.Description);
+            set.Bind(eventDateLable).To(vm => vm.Item.EventDate);
             set.Bind(hostedByLabel).To(vm => vm.Item.HostedBy);
             set.Apply();
         }
