@@ -14,6 +14,8 @@
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NerdDinner.Core\NerdDinner.Core.csproj">
-      <Project>{5d08f0db-549e-4377-953c-633fc64bb1e2}</Project>
+      <Project>{5D08F0DB-549E-4377-953C-633FC64BB1E2}</Project>
       <Name>NerdDinner.Core</Name>
     </ProjectReference>
   </ItemGroup>

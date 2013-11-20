@@ -1,5 +1,4 @@
 using System;
-using System;
 using System.Drawing;
 
 using MonoTouch.Foundation;
@@ -34,6 +33,8 @@ namespace NerdDinner.Touch
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            Title = "Nerd Dinner";
 
             var source = new MvxStandardTableViewSource(TableView, "TitleText Title");
             this.CreateBinding(source).To<ListViewModel>(vm => vm.Items).Apply();

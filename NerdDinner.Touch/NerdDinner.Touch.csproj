@@ -23,6 +23,10 @@
     <ConsolePause>false</ConsolePause>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <MtouchSdkVersion>7.0</MtouchSdkVersion>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -44,6 +48,13 @@
     <ConsolePause>false</ConsolePause>
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7</MtouchArch>
+    <CodesignProvision>710C111B-C276-4457-A6D3-06A75C3F448D</CodesignProvision>
+    <BuildIpa>true</BuildIpa>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -92,11 +103,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NerdDinner.Core\NerdDinner.Core.csproj">
-      <Project>{5d08f0db-549e-4377-953c-633fc64bb1e2}</Project>
+      <Project>{5D08F0DB-549E-4377-953C-633FC64BB1E2}</Project>
       <Name>NerdDinner.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\NerdDinner.Mobile\NerdDinner.Mobile.csproj">
-      <Project>{9f9d73fe-d609-48d4-97b6-77a9a4c4c345}</Project>
+      <Project>{9F9D73FE-D609-48D4-97B6-77A9A4C4C345}</Project>
       <Name>NerdDinner.Mobile</Name>
     </ProjectReference>
   </ItemGroup>
@@ -122,19 +133,18 @@
     <Reference Include="Cirrious.MvvmCross.Touch">
       <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.0.14\lib\MonoTouch\Cirrious.MvvmCross.Touch.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Components\json.net-4.5.11\lib\ios\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Components\json.net-4.5.11\lib\ios\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="json.net">
-      <Visible>False</Visible>
       <Version>4.5.11</Version>
+      <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>
   <ItemGroup>
@@ -146,8 +156,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\Icon-72.png" />
   </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\splash_320_480.png" />
+  </ItemGroup>
 </Project>

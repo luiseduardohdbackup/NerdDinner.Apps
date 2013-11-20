@@ -25,10 +25,16 @@
 	<key>CFBundleDisplayName</key>
 	<string>Nerd Dinner</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.nerddinner</string>
+	<string>com.mourfield.nerddinner</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>NSMainNibFile</key>
 	<string></string>
+	<key>CFBundleShortVersionString</key>
+	<string>1</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Resources/Images.xcassets/LaunchImage.launchimage</string>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
 </dict>
 </plist>
